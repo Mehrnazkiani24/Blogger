@@ -2,10 +2,21 @@
   <h2>Title: {{name}}</h2>
   <p>Description: {{description}}</p>
   <p>Created by {{user.name}} on {{format_date date_created}}</p>
-
+{{!-- 
   <p>
     <button class="btn btn-primary">Update this blogpost!</button>
-  </p>
+  </p> --}}
+</div>
+<div>
+  <h4>Comments for this blog</h4>
+  
+  {{#each comments as |comment|}}
+  {{this.commentmessages}}
+  <p>comment Text: {{comment.commentmessages}}</p>
+  <h6>User:{{comment.user_id}}</h6>
+  {{/each}}
+
+  
 </div>
 <form class="form add-comment" data-blogid = {{id}}>
   <div class="form-group">
